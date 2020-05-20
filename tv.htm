@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta name="Keywords" content="Fan, Fansoft, Enterprises">
+<meta name="Description" content="Fansoft Enterprises">
+<title>Fansoft Enterprises</title>
+<base target="_top">
+</head>
+<body LINK="#FFFF00" VLINK="#FFFF00" BGCOLOR="#000000" text="#FFFFFF" alink="#C0C0C0" style="text-align: center">
+
+<font COLOR="#ffffff">
+<p ALIGN="center"><strong>FANTV</strong><font size="1">(TM)</font></p>
+</font>
+<p ALIGN="center"><b><font color="#FFFFFF" size="6">D</font><font color="#FFFFFF" size="5">IE</font><font color="#FFFFFF" size="6"> </font>
+<font color="#FFFF00" size="6">JavaScript </font><font size="6">F</font></b><font size="5"><b>ERNSEHERBERECHNUNG</b> 
+<em>V.<!--webbot bot="Timestamp" s-type="EDITED" s-format="%Y-%m-%d" startspan -->2009-05-13<!--webbot bot="Timestamp" endspan i-checksum="12353" --></em></font><font color="#FFFFFF" size="1">
+</font></p>
+
+</body>
+
+<SCRIPT language=JavaScript type=text/javascript>
+<!--
+var ZOLL = 2.54;
+var diagonale = 0, diagonale2 = 0;
+var vx = 0, vy = 0;
+var hoehe = 0, breite = 0, flaeche = 0;
+var info = "";
+var end = false;
+var exit = false;
+while(!end && !exit){
+   diagonale = prompt("diagonale in cm (-1 für zoll, 0 für ende)",127);
+   if (diagonale == null || diagonale == 0){end = true}
+   if (diagonale != 0){exit = true}
+}
+exit = false;
+if (!end && diagonale == -1){
+   diagonale = prompt("diagonale in zoll (0 für ende)",50);
+   if (diagonale == null || diagonale == 0){end= true}
+   diagonale = diagonale * ZOLL;
+}
+while(!end && vx == 0){
+   vx = prompt("verhältnis x",16);
+   if (vx == null){end= true}
+}
+while(!end && vy == 0){
+   vy = prompt("verhältnis y",9);
+   if (vy == null){end= true}
+}
+if (!end){
+   hoehe   = Math.sqrt((Math.pow(diagonale,2)) / ((Math.pow(vx,2) + Math.pow(vy,2)) / Math.pow(vy,2)));
+   breite  = Math.sqrt((Math.pow(diagonale,2)) / ((Math.pow(vy,2) + Math.pow(vx,2)) / Math.pow(vx,2)));
+   flaeche = hoehe * breite;
+   info = "Diagonale " + diagonale + " cm<br>";
+   info = info + "Seitenverhältnis " + vx + ":" + vy + "<br>";
+   info = info + "ergibt:<br>";
+   info = info + "breite = " + breite + " cm<br>";
+   info = info + "höhe = " + hoehe + " cm<br>";
+   info = info + "flaeche = " + flaeche + " cm^2<br>";
+   if (vx == 16 && vy == 9){
+      diagonale2 = Math.sqrt((Math.pow(hoehe,2) * ((Math.pow(4,2) + Math.pow(3,2)) / Math.pow(3,2))));
+      info = info + "Die höhe in 16:9 entspräche einem " + diagonale2 + " cm 4:3 Fernseher<br>";
+   }
+   else{
+      if (vx == 4 && vy == 3){
+         diagonale2 = Math.sqrt((Math.pow(hoehe,2) * ((Math.pow(16,2) + Math.pow(9,2)) / Math.pow(9,2))));
+         info = info + "Die höhe in 4:3 entspräche einem " + diagonale2 + " cm 16:9 Fernseher<br>";
+      }
+   }
+}
+document.writeln("<p align=\"center\"><br><br>")
+if (end){
+   document.write("- Programmende -<br>")
+}
+else{
+    document.write(info)
+}
+//-->
+</SCRIPT>
+</html>

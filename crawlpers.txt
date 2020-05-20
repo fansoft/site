@@ -1,0 +1,12 @@
+1:(Brother) (Luke * 6) (Young) Skywalker (Jedi * 2) * 9
+2:Princess (General) Leia (Organa) * 6 
+2:(Chancellor *2) (Emperor * 2) (Palpatine * 2) * 6
+3:Count Dooku * 2
+3:Rey * 2
+3:Kylo Ren * 2
+4:Senator Amidala
+4:General Grievous
+4:Darth Vader
+4:Han Solo
+4:Jabba the Hutt
+4:Snoke
